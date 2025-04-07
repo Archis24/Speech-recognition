@@ -3,7 +3,9 @@ import speech_recognition as sr  # Permite reconocer la voz del usuario
 import random  # Permite elegir palabras al azar
 
 # Lista de palabras que el usuario debe pronunciar en inglés
-words = ["apple", "banana", "orange", "hello", "cat", "dog", "house", "sun", "moon", "star"]
+words = ["太陽","月", "星", "空", "雲"]  #como se pronuncian, Taiyō ,tsuki, hoshi, sora, kumo
+# Palabras pero en ingles
+#sun, moon, star, sky, cloud
 
 # Función que escucha lo que el usuario dice
 def listen():
@@ -11,8 +13,10 @@ def listen():
         print("🎤 Di la palabra en voz alta...")  # Pide al usuario que hable
         audio = sr.Recognizer().listen(source)  # Graba la voz del usuario
     
-    # Convierte el audio en texto usando reconocimiento de voz
-    return sr.Recognizer().recognize_google(audio, language="en-US").lower()
+    # Convierte el audio en texto usando reconocimiento de voz en el idioma japonés
+    # (aunque la palabra es en inglés, el reconocimiento se hace en japonés)
+    # Esto es un error, ya que el idioma debería ser inglés
+    return sr.Recognizer().recognize_google(audio, language="ja-JP").lower()
 
 # Función principal del juego
 def game():
